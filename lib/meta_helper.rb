@@ -49,24 +49,29 @@ module MetaHelper
     end
     
     def sharethis_code
-      '<!-- JiaThis Button BEGIN -->
-      <div id="ckepop">
-      <a class="jiathis_button_googleplus"></a>
-      <a class="jiathis_button_fb"></a>
-      <a class="jiathis_button_twitter"></a>
-      <a class="jiathis_button_tsina"></a>
-      <a class="jiathis_button_tqq"></a>
-      <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-      </div>
-      <div style="clear:left;"></div>
-      <script type="text/javascript" >
-      var jiathis_config={
-      	summary:"",
-      	hideMore:true
-      }
-      </script>
-      <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-      <!-- JiaThis Button END -->'
+      # '<!-- JiaThis Button BEGIN -->
+      # <div id="ckepop">
+      # <a class="jiathis_button_googleplus"></a>
+      # <a class="jiathis_button_fb"></a>
+      # <a class="jiathis_button_twitter"></a>
+      # <a class="jiathis_button_tsina"></a>
+      # <a class="jiathis_button_tqq"></a>
+      # <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+      # </div>
+      # <div style="clear:left;"></div>
+      # <script type="text/javascript" >
+      # var jiathis_config={
+      #   summary:"",
+      #   hideMore:true
+      # }
+      # </script>
+      # <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+      # <!-- JiaThis Button END -->'
+      
+      "<span class='st_googleplus_large' displayText='Google +'></span>
+      <span class='st_facebook_large' displayText='Facebook'></span>
+      <span class='st_twitter_large' displayText='Tweet'></span>
+      <span class='st_sina_large' displayText='Sina'></span>"
     end
 
 end
