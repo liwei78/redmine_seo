@@ -1,0 +1,19 @@
+<% if @newss.empty? %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+  <% @newss.each do |news| %>
+      <div class="box wiki">
+        <h1>
+            <%= link_to_project(news.project) + ': ' unless news.project == @project %>
+            <%= link_to h(news.title), news_path(news) %>
+        </h1>
+        <p class="news author">
+            <%= authoring news.created_on, news.author %>
+            <%= "(#{l(:label_x_comments, :count => news.comments_count)})" if news.comments_count > 0 %>
+        </p>
+        <%= textilizable(news.description) %>
++        <%= sharethis_code %>
+      </div>
+  <% end %>
+<% end %>
+<p class="pagination"><%= pagination_links_full @news_pages %></p>

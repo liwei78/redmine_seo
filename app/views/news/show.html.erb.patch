@@ -1,0 +1,7 @@
+<div class="wiki">
+<%= textilizable(@news.description) %>
+</div>
++<%= sharethis_code %>
+<br />
+
+<div id="comments" style="margin-bottom:16px;">

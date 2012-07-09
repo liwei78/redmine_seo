@@ -1,0 +1,3 @@
++<%= sharethis_code %>
++
+<% if @changesets.present? %>
