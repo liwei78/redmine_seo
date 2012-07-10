@@ -8,8 +8,10 @@ module MetaHelper
             # Redmine::Info.app_name
             "cocos2d-x is a cross platform open source free 2D game engine for mobile gamedev, that is fast and stable, easy to learn and use"
           end
-        elsif args.first.is_a?(String)
+        elsif args.first.present? and args.first.is_a?(String)
           @meta_description = truncate(args.first.gsub(%r{\n+}, ' '), 500)
+        else
+          "cocos2d-x is a cross platform open source free 2D game engine for mobile gamedev, that is fast and stable, easy to learn and use"
         end
     end
 
@@ -30,9 +32,9 @@ module MetaHelper
       strip_entities(text).scan(%r{[^\000-\100\133-\140\173-]{4,30}}i).inject({}) { |hash, word|
           keyword = word.downcase
           if hash.has_key?(keyword)
-              hash[keyword] += 1
+            hash[keyword] += 1
           else
-              hash[keyword] = 1
+            hash[keyword] = 1
           end
           hash
       }.sort{ |a, b| b[1] <=> a[1] }.collect{ |item| item[0] }.first(10)

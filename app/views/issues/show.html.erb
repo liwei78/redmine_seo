@@ -116,6 +116,7 @@
 <% end %>
 
 <% html_title "#{@issue.tracker.name} ##{@issue.id}: #{@issue.subject}" %>
+<% meta_description @issue.description -%>
 
 <% content_for :sidebar do %>
   <%= render :partial => 'issues/sidebar' %>
