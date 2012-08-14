@@ -1,4 +1,5 @@
 <title><%=h html_title %></title>
++<%= stylesheet_link_tag 'coderay', :media => 'all' %>
 -<meta name="description" content="cocos2d-x is a cross platform open source free 2D game engine for mobile gamedev, that is fast and stable, easy to learn and use" /> 
 -<meta name="keywords" content="cocos2d-x,cocos2d,game engine,opengl,cross,multi,platform,iphone,ipad,android,windows,metro,bada,marmalade,playbook" />
 +<meta name="description" content="<%= h meta_description %>" />

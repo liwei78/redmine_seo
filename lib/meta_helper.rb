@@ -9,7 +9,7 @@ module MetaHelper
             "cocos2d-x is a cross platform open source free 2D game engine for mobile gamedev, that is fast and stable, easy to learn and use"
           end
         elsif args.first.present? and args.first.is_a?(String)
-          @meta_description = truncate(args.first.gsub(%r{\n+}, ' '), 500)
+          @meta_description = truncate(args.first.gsub(%r{\n+}, ' '), :length => 500)
         else
           "cocos2d-x is a cross platform open source free 2D game engine for mobile gamedev, that is fast and stable, easy to learn and use"
         end
