@@ -50,30 +50,15 @@ module MetaHelper
         text.gsub(%r{&#?[a-z0-9]+;}i, '')
     end
     
-    def sharethis_code
-      # '<!-- JiaThis Button BEGIN -->
-      # <div id="ckepop">
-      # <a class="jiathis_button_googleplus"></a>
-      # <a class="jiathis_button_fb"></a>
-      # <a class="jiathis_button_twitter"></a>
-      # <a class="jiathis_button_tsina"></a>
-      # <a class="jiathis_button_tqq"></a>
-      # <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-      # </div>
-      # <div style="clear:left;"></div>
-      # <script type="text/javascript" >
-      # var jiathis_config={
-      #   summary:"",
-      #   hideMore:true
-      # }
-      # </script>
-      # <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-      # <!-- JiaThis Button END -->'
+    def sharethis_code(url=nil, title=nil)
       
-      "<span class='st_googleplus_large' displayText='Google +'></span>
-      <span class='st_facebook_large' displayText='Facebook'></span>
-      <span class='st_twitter_large' displayText='Tweet'></span>
-      <span class='st_sina_large' displayText='Sina'></span>"
+      st_url   = url.nil?   ? "" : "st_url='#{url}'"                  
+      st_title = title.nil? ? "" : "st_title='#{URI.encode(title)}'"
+      
+      "<span class='st_googleplus_large' displayText='Google +' #{st_url} #{st_title}></span>
+      <span class='st_facebook_large' displayText='Facebook' #{st_url} #{st_title}></span>
+      <span class='st_twitter_large' displayText='Tweet' #{st_url} #{st_title}></span>
+      <span class='st_sina_large' displayText='Sina' #{st_url} #{st_title}></span>"
     end
 
 end

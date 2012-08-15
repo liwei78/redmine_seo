@@ -12,7 +12,7 @@
             <%= "(#{l(:label_x_comments, :count => news.comments_count)})" if news.comments_count > 0 %>
         </p>
         <%= textilizable(news.description) %>
-+        <%= sharethis_code %>
++       <%= sharethis_code(news_url(news), h(news.title)) %>
       </div>
   <% end %>
 <% end %>
